@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button, Form } from "semantic-ui-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div id="container">
+        <h1 className="text-centered">Port Scanner</h1>
+        <Form>
+          <Form.Field>
+            <label>Choose you ip address:</label>
+            <input placeholder="FIp address" />
+          </Form.Field>
+          <Form.Field>
+            <label>Last Name</label>
+            <input placeholder="Last Name" />
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
+      </div>
     </div>
   );
 }
