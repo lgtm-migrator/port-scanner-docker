@@ -26,9 +26,6 @@ PortScanner.prototype.init = function() {
 	});
 };
 
-/**
- * Taken from http://www.gnucitizen.org/blog/javascript-port-scanner/
- */
 PortScanner.prototype.check = function (callback, target, port, timeout) {
 	
 	var timeout = (timeout == null)?100:timeout;
