@@ -1,8 +1,7 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 
 const App = () => {
-  const [error, setError] = useState({ show: false, msg: undefined });
   const [formValues, setFormValues] = useState({
     address: undefined,
     startPort: 0,
@@ -12,17 +11,9 @@ const App = () => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
-  const handleSubmit = useCallback(() => {
-    var img = new Image();
-    img.onload = img.onerror;
-    img.src = "http://github.com:443";
-
-    setTimeout(function () {
-      if (!img) return;
-      img = undefined;
-      useCallback("github.com", "443", "closed");
-    }, 3000);
-  })
+  const handleSubmit = () => {
+    console.log('passage function callback')
+  }
   return (
     <div>
       <div id="container">
