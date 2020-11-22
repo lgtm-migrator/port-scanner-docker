@@ -13,7 +13,15 @@ const App = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
   const handleSubmit = useCallback(() => {
-    console.log('test passage function handlesubmit')
+    var img = new Image();
+    img.onload = img.onerror;
+    img.src = "http://github.com:443";
+
+    setTimeout(function () {
+      if (!img) return;
+      img = undefined;
+      useCallback("github.com", "443", "closed");
+    }, 3000);
   })
   return (
     <div>

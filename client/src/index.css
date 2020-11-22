@@ -4,14 +4,16 @@ body {
   height: 100vh;
   background: #8d99ae !important;
 }
+.red{
+  background: #d90429 !important;
+}
 #container {
   max-width: 500px;
-  min-width: 320px;
+  min-width: 280px;
   border: #edf2f4 solid 1px;
-  min-height: 350px;
-  max-height: 30vh;
+  min-height: auto;
   margin: auto;
-  margin-top: 30vh;
+  margin-top: 15%;
   border-radius: 5px;
   background: #edf2f4;
   -webkit-box-shadow: 5px 4px 17px -7px #2b2d42;
@@ -20,4 +22,10 @@ body {
 }
 .text-centered {
   text-align: center;
+}
+.m-auto{
+  margin:auto;
+}
+.mt-2{
+  margin-top:20px;
 }
