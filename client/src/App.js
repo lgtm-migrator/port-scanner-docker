@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
+import axios from "axios";
 
 const App = () => {
+  const [array, setArray] = useState(undefined)
   const [formValues, setFormValues] = useState({
     address: undefined,
     startPort: 0,
@@ -12,18 +14,23 @@ const App = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
   const handleSubmit = () => {
-    console.log('passage function callback')
-  }
+    console.log("passage function callback");
+    axios
+      .get("http://localhost:8000/api/portscannerdocker")
+      .then(res => {
+        setArray(res.data)
+      })
+  };
   return (
     <div>
       <div id="container">
         <h1 className="text-centered">Port Scanner</h1>
         <div className="m-auto">
           <Form onSubmit={handleSubmit}>
-            <label>Choose your address</label>
+            <label>Choose your host</label>
             <Form.Field>
               <input
-                placeholder="Ip address"
+                placeholder="github.com"
                 value={formValues.address}
                 name="address"
                 onChange={handleChange}
@@ -32,23 +39,28 @@ const App = () => {
             <label>Choose your ports (65535 maximum)</label>
             <Form.Group>
               <Form.Input
+                className="button-port"
                 placeholder="0"
                 name="startPort"
                 value={formValues.startPort}
                 onChange={handleChange}
               />
               <Form.Input
+                className="button-port"
                 placeholder="1048"
                 name="endPort"
                 value={formValues.endPort}
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button fluid className="red" type="submit">
-              Submit
-            </Button>
+            <div className="mt-2">
+              <Button fluid className="red" type="submit">
+                Submit
+              </Button>
+            </div>
           </Form>
         </div>
+        <div></div>
         <p className=" mt-2 text-centered">Port scanner v.1.0</p>
       </div>
     </div>
