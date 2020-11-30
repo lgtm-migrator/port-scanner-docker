@@ -3,23 +3,26 @@ import { Button, Form } from "semantic-ui-react";
 import axios from "axios";
 
 const App = () => {
-  const [array, setArray] = useState(undefined)
+  const [array, setArray] = useState(undefined);
   const [formValues, setFormValues] = useState({
-    address: undefined,
+    target: 'github.com',
     startPort: 0,
-    endPort: 1048,
+    endPort: 500,
   });
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
   const handleSubmit = () => {
-    console.log("passage function callback");
     axios
-      .get("http://localhost:8000/api/portscannerdocker")
-      .then(res => {
-        setArray(res.data)
+      .post("http://localhost:5000/api/portscan", {
+        target: formValues.target,
+        startPort: parseInt(formValues.startPort),
+        endPort: parseInt(formValues.endPort),
       })
+      .then((res) => {
+        setArray(res.data);
+      });
   };
   return (
     <div>
@@ -30,9 +33,10 @@ const App = () => {
             <label>Choose your host</label>
             <Form.Field>
               <input
+                type='text'
                 placeholder="github.com"
-                value={formValues.address}
-                name="address"
+                value={formValues.target}
+                name="target"
                 onChange={handleChange}
               />
             </Form.Field>
@@ -40,12 +44,14 @@ const App = () => {
             <Form.Group>
               <Form.Input
                 className="button-port"
+                type='tel'
                 placeholder="0"
                 name="startPort"
                 value={formValues.startPort}
                 onChange={handleChange}
               />
               <Form.Input
+                type='tel'
                 className="button-port"
                 placeholder="1048"
                 name="endPort"
