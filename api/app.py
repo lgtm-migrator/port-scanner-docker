@@ -2,7 +2,6 @@
 from flask import Flask, request
 from flask_cors import CORS
 import socket
-import threading
 app = Flask(__name__)
 CORS(app)
 # ...
@@ -15,7 +14,6 @@ def portscan():
     target = request.json['target']
     startPort = request.json['startPort']
     endPort = request.json['endPort']
-    print(target, startPort, endPort)
     if (method.lower() == "post"):
         for port in range(startPort, endPort):
             try:

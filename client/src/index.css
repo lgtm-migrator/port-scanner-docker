@@ -4,6 +4,9 @@ body {
   height: 100vh;
   background: #8d99ae !important;
 }
+.grey{
+  background: #8d99ae !important; 
+}
 .red{
   background: #d90429 !important;
 }
