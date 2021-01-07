@@ -4,7 +4,7 @@
 ## Project Description
 This project is a basic implementation of port scanner, which helps network administrators to ensure machines in their network run in normal.
 
-## Installation and run the app
+## Installation and run the app 🚀🚀
 Get the code
 ```bash
 https://github.com/alpha77788998778999877855/port-scanner-docker.git
