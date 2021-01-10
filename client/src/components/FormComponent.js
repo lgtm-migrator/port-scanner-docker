@@ -12,26 +12,26 @@ const FormComponent = () => {
   });
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
-    dispatch({ type: "HOST", payload: formValues.target });
   };
   const handleSubmit = () => {
     dispatch({ type: "LOADING", payload: true });
+    dispatch({ type: "HOST", payload: formValues.target });
     axios
-      .post("http://localhost:5000/api/portscan", {
+      .post("http://127.0.0.1:5000/api/portscan", {
         target: formValues.target,
         startPort: parseInt(formValues.startPort),
         endPort: parseInt(formValues.endPort),
       })
       .then((res) => {
         dispatch({
-          type: "OPENED_PORTS",
+          type: "OPEN_PORTS",
           payload: res.data.data[0].openedPorts,
         });
         dispatch({ type: "LOADING", payload: false });
         dispatch({ type: "RESULTS", payload: true });
       })
       .catch((error) => {
-        dispatch({ type: "SET_ERROR", payload: "an error has occured" });
+        dispatch({ type: "SET_ERROR", payload: "an error is happened" });
       });
   };
   return (

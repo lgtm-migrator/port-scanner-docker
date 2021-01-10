@@ -1,6 +1,6 @@
 const Reducer = (state, action) => {
   switch (action.type) {
-    case "OPENED_PORTS":
+    case "OPEN_PORTS":
       return {
         ...state,
         openedPorts: action.payload,

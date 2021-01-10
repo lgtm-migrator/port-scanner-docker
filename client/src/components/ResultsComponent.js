@@ -7,10 +7,10 @@ const ResultsComponent = () => {
   const [ports, setPorts] = useState([]);
   const returnFunction = () => {
     dispatch({ type: "RESULTS", payload: false });
-    dispatch({ type: "OPENED_PORTS", payload: null });
+    dispatch({ type: "OPEN_PORTS", payload: null });
   };
   useEffect(() => {
-    if (state.openedPorts !== null) {
+    if (state) {
       let ports = []
       state.openedPorts.forEach((port) => {
         state.portsDesc.forEach((portDesc) => {
@@ -35,9 +35,9 @@ const ResultsComponent = () => {
         </thead>
         {ports.length
           ? ports.map((port) => (
-              <tbody key={port}>
+              <tbody key={port.port}>
                 <tr>
-                  <td data-label="Host">{state.host}</td>
+                  <td key={port.port} data-label="Host">{state.host}</td>
                   <td data-label="Port">{port.port}</td>
                   <td data-label="Port desc">{port.portDesc}</td>
                   <td data-label="Status">Open</td>
