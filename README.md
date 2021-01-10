@@ -31,3 +31,16 @@ cd ../api
 ```bash
 flask run
 ```
+## Installation and run the app with docker 🚀🚀
+
+Get the code
+
+```bash
+https://github.com/alpha77788998778999877855/port-scanner-docker.git
+```
+
+Go to folder `port-scanner-docker`
+
+```bash
+docker-compose build
+```
