@@ -6,6 +6,10 @@
 
 This project is a basic implementation of port scanner, which helps network administrators to ensure machines in their network run in normal.
 
+## Tech Stack
+
+Reactjs, Flask, Material UI
+
 ## Installation and run the app 🚀🚀
 
 Get the code
