@@ -1,4 +1,4 @@
-FROM python:3.10.0b4
+FROM python:3.11-rc-slim
 RUN pip install flask
 RUN pip install Flask-Cors
 COPY . .
