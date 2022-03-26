@@ -3,6 +3,7 @@
  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="covid19-leaflet-docker is released under the MIT license." />
 </a>
 ![Known Vulnerabilities](https://snyk.io/test/github/JulienChapron/port-scanner-docker/badge.svg)
+
 # Simple port scanner
 
 ![alt text](https://raw.githubusercontent.com/alpha77788998778999877855/port-scanner-docker/master/markdown/img/simple-port-scanner.gif)
